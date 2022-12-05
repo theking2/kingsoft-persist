@@ -1,0 +1,19 @@
+{
+    "name": "theking2/persist",
+    "description": "Object Persistance",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Theking2\\Persist\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "theking2",
+            "email": "theking2@king.ma"
+        }
+    ],
+    "minimum-stability": "RC",
+    "require": {}
+}
