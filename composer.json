@@ -5,7 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Theking2\\Persist\\": "src/"
+            "Kingsoft\\Persist\\": "src/"
         }
     },
     "authors": [

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Persist;
+namespace Kingsoft\Persist;
 
 abstract class Base implements IPersist
 {
