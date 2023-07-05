@@ -48,7 +48,7 @@ abstract class Base implements IPersist
    * createFromArray - Create or set from array
    *
    * @param  mixed $array
-   * @return \Persist\Base
+   * @return Base
    */
   static function createFromArray(array $array): Base {
 		$obj = new static();
@@ -79,7 +79,7 @@ abstract class Base implements IPersist
 	 * Create a new object from json
 	 *
 	 * @param  string $json
-	 * @return \Persist\Base
+	 * @return Base
 	 */
 	public static function createFromJson( string $json ): Base {
 		return static::createFromArray( json_decode( $json, true ) );
@@ -94,12 +94,13 @@ abstract class Base implements IPersist
 	public function getKeyValue(): ?int { return $this-> isRecord()? (int)($this-> {static::getPrimaryKey()}): null; }
 
 	/**
-	 * Convert those fields that are not strings to strings
+	 * Convert those fields that are not strings to the correct type
 	 *
-	 * @param  mixed $fieldName
-	 * @return void
+	 * @param  string $fieldName
+	 * @return string|int|bool|null
 	 */
-	protected function getFieldString( string $fieldName )
+	protected function getFieldString( string $fieldName ): string|int|bool|null
+
 	{
 		// convert to string based on type of field
     switch($this-> getFields()[$fieldName][0]) {
