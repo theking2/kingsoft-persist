@@ -3,7 +3,7 @@
 namespace Kingsoft\Persist;
 
 /**
- * Interface \Persist\Interface
+ * Interface IPersist
  * @package Persist
  */
 
