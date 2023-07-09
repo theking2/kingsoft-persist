@@ -115,9 +115,9 @@ abstract class Base implements IPersist
 	 * Convert those fields that are not strings to the correct type
 	 *
 	 * @param  string $fieldName
-	 * @return string|int|bool|null
+	 * @return string|int|float|bool|null
 	 */
-	protected function getFieldString( string $fieldName ): string|int|bool|null
+	protected function getFieldString( string $fieldName ): string|int|float|bool|null
 	{
 		// convert to string based on type of field
 		switch($this->getFields()[ $fieldName ][0]) {
