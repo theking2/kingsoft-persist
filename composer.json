@@ -1,6 +1,6 @@
 {
     "name": "kingsoft/persist",
-    "description": "Object Persistance",
+    "description": "Make persistance easy and fast. Use it to store data in files, databases, or any other storage system. It's easy to use and extend.",
     "type": "library",
     "license": "MIT",
     "autoload": {
