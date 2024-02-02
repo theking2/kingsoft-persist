@@ -158,8 +158,8 @@ abstract class Base implements IPersist
 	public function __construct( mixed $param = null )
 	{
 		if( !is_null( $param ) ) {
-			if( !\is_array( $param ) );
-				$this->_valid = $this->thaw( $param ) ) {
+			if( !\is_array( $param ) ) {
+				$this->_valid = $this->thaw( $param );
 			} else {
 				$this->setFromArray( $param );
 			}
