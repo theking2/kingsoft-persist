@@ -22,12 +22,12 @@ interface IPersist
 	public function freeze( ):bool;
   /**
    * thaw – fetch a record from the database by key
-	 * this assumes keys are singel and ints!!
+	 * this assumes keys are single and ints!!
    *
-   * @param  int $id
-   * @return object
+   * @param  mixed $id
+   * @return null|IPersist
    */
-  public function thaw($id): ?IPersist;
+  public function thaw(mixed $id): null|IPersist;
   /**
    * Return the primary key of the object
    *
