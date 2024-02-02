@@ -159,7 +159,7 @@ abstract class Base implements IPersist
 	{
 		if( !is_null( $param ) ) {
 			if( !\is_array( $param ) ) {
-				$this->_valid = $this->thaw( $param );
+				$this->_valid = !is_null( $this->thaw( $param ) );
 			} else {
 				$this->setFromArray( $param );
 			}
