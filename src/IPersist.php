@@ -28,6 +28,14 @@ interface IPersist
    * @return null|IPersist
    */
   public function thaw(mixed $id): null|IPersist;
+ 	
+ 	/**
+ 	 * delete – remove a record from the database
+ 	 *
+ 	 * @return bool
+ 	 */
+ 	public function delete(): bool;
+
   /**
    * Return the primary key of the object
    *
@@ -44,7 +52,7 @@ interface IPersist
    * Create a new object from an array
    *
    * @param  mixed $data
-   * @return \Persist\Base
+   * @return Base
    */
   public static function createFromArray(array $data): Base;
 	/**
@@ -64,7 +72,7 @@ interface IPersist
    * Create a new object from a JSON string
    *
    * @param  mixed $json
-   * @return \Persist\Base
+   * @return Base
    */
   public static function createFromJson(string $json): Base;
 }
