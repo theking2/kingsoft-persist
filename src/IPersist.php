@@ -41,7 +41,7 @@ interface IPersist
    *
    * @return mixed
    */
-  public function getKeyValue(): ?int;  
+  public function getKeyValue(): mixed;  
   /**
    * Get the object values as array
    *
