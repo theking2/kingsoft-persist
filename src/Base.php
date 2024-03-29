@@ -106,9 +106,12 @@ abstract class Base implements IPersist
 	}
 
 	/** getKeyValue - retrieve current key */
-	public function getKeyValue(): ?int
+	public function getKeyValue(): mixed
 	{
-		return $this->isRecord() ? (int) ( $this->{static::getPrimaryKey()} ) : null;
+		if( !$this->isRecord() ) {
+			return null;
+		}
+		return $this->{$this->getPrimaryKey()};
 	}
 
 	/**
