@@ -22,10 +22,6 @@ interface IPersist
 	public function freeze( ):bool;
   /**
    * thaw – fetch a record from the database by key
-	 * this assumes keys are single and ints!!
-   *
-   * @param  mixed $id
-   * @return null|IPersist
    */
   public function thaw(mixed $id): null|IPersist;
  	
@@ -38,41 +34,26 @@ interface IPersist
 
   /**
    * Return the primary key of the object
-   *
-   * @return mixed
    */
   public function getKeyValue(): mixed;  
   /**
    * Get the object values as array
-   *
-   * @return array
    */
   public function getArrayCopy(): array;  
   /**
    * Create a new object from an array
-   *
-   * @param  mixed $data
-   * @return Base
    */
   public static function createFromArray(array $data): Base;
 	/**
 	 * setFromArray
-	 *
-	 * @param  mixed $array
-	 * @return Base
 	 */
 	public function setFromArray(array $array): Base;
 /**
    * Get the object as a JSON string
-   *
-   * @return string
    */
   public function getJson(): string;  
   /**
    * Create a new object from a JSON string
-   *
-   * @param  mixed $json
-   * @return Base
    */
   public static function createFromJson(string $json): Base;
 }

@@ -15,8 +15,6 @@ abstract class Base implements IPersist
 	protected array $_dirty = [];
 
 	/** _isField test if the fieldname is valid 
-	 * @param string $fieldname
-	 * @return bool
 	 */
 	protected function _isField( string $fieldname ): bool
 	{
@@ -26,23 +24,17 @@ abstract class Base implements IPersist
 	/* #region getters/setters */
 
 	/**
-	 * __get
-	 *
-	 * @param  mixed $field
-	 * @return mixed
+	 * __get, get the value of a field
 	 */
-	public function __get( string $field )
+	public function __get( string $field ): mixed
 	{
 		return $this->{$field};
 	}
 
 	/**
-	 * __set
-	 * @param string $field
-	 * @param mixed $value
-	 * @return void
+	 * __set, set the value of a field
 	 */
-	public function __set( string $field, $value ): void
+	public function __set( string $field, mixed $value ): void
 	{
 		if( $this->_isField( $field ) ) {
 			$this->{$field} = $value;
@@ -54,9 +46,6 @@ abstract class Base implements IPersist
 
 	/**
 	 * createFromArray - Create or set from array
-	 *
-	 * @param  mixed $array
-	 * @return Base
 	 */
 	static function createFromArray( array $array ): Base
 	{
@@ -65,10 +54,7 @@ abstract class Base implements IPersist
 		return $obj;
 	}
 	/**
-	 * setFromArray
-	 *
-	 * @param  mixed $array
-	 * @return Base
+	 * setFromArray - Set object from array
 	 */
 	public function setFromArray( array $array ): Base
 	{
@@ -79,8 +65,6 @@ abstract class Base implements IPersist
 	}
 	/**
 	 * Returns the json representation of the object
-	 *
-	 * @return string
 	 */
 	public function getJson(): string
 	{
@@ -88,9 +72,6 @@ abstract class Base implements IPersist
 	}
 	/**
 	 * Create a new object from json
-	 *
-	 * @param  string $json
-	 * @return Base
 	 */
 	public static function createFromJson( string $json ): Base
 	{
@@ -99,7 +80,9 @@ abstract class Base implements IPersist
 	/* #endregion */
 
 	/* #region generic */
-	/** isRecord - true if record exists in database */
+	/** 
+	 * isRecord - true if record exists in database
+	 */
 	public function isRecord(): bool
 	{
 		return isset( $this->{static::getPrimaryKey()} ) and !is_null( $this->{static::getPrimaryKey()} );
